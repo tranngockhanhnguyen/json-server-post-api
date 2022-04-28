@@ -1,0 +1,58 @@
+
+# Posts
+@baseURL=http://localhost:3000/api
+@resourceName=posts
+
+# @name getAll
+GET {{baseURL}}/{{resourceName}}
+
+################################
+
+# @name filterProducts
+GET {{baseURL}}/{{resourceName}}?author=Ashley Smith
+
+###############################
+
+# @name filterProducts
+GET {{baseURL}}/{{resourceName}}?title_like=nemo
+
+###############################
+
+# @name pagination
+GET {{baseURL}}/{{resourceName}}?_page=1&_limit=6
+
+###############################
+
+# @name sort
+GET {{baseURL}}/{{resourceName}}?_sort=author&_order=asc
+
+###############################
+
+# @name addNew
+POST  {{baseURL}}/{{resourceName}}
+content-type: application/json
+
+{
+    "author": "Nguye",
+    "title": "abc",
+    "description": "Consequatur pariatur ea omnis quibusdam. Molestias voluptas sequi pariatur. Debitis delectus neque numquam.\nVelit optio rerum velit sed eos id possimus. Incidunt ipsa aut. Possimus eaque voluptates quasi enim neque numquam sed commodi. Sit adipisci voluptatibus perspiciatis minima.\nQuia odio voluptas. Alias aut sequi alias dolores similique rem omnis consequatur. Quisquam aut ut suscipit nostrum sapiente assumenda.",
+    "imageUrl": "http://loremflickr.com/1368/400/food?44470"
+}
+
+################################
+
+# @name update
+PATCH   {{baseURL}}/{{resourceName}}/2Ibel1d
+content-type: application/json
+
+{
+  "author": "Nguyen",
+  "title": "xyz abc",
+  "description": "Consequatur pariatur ea omnis quibusdam. Molestias voluptas sequi pariatur. Debitis delectus neque numquam.\nVelit optio rerum velit sed eos id possimus. Incidunt ipsa aut. Possimus eaque voluptates quasi enim neque numquam sed commodi. Sit adipisci voluptatibus perspiciatis minima.\nQuia odio voluptas. Alias aut sequi alias dolores similique rem omnis consequatur. Quisquam aut ut suscipit nostrum sapiente assumenda.",
+  "imageUrl": "http://loremflickr.com/1368/400/food?44470"
+}
+
+################################
+
+# @name remove
+DELETE    {{baseURL}}/{{resourceName}}/9klQaWF
