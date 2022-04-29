@@ -13,7 +13,7 @@ const randomPostList = (n) => {
       author: faker.name.findName(),
       title: faker.lorem.sentence(),
       description: faker.lorem.paragraphs(),
-      imageUrl: faker.image.image(1368, 400, true),
+      imageUrl: 'https://picsum.photos/1368/400',
       createdAt: Date.now(),
       updateAt: Date.now(),
     };
