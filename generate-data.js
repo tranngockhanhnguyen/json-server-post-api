@@ -15,7 +15,7 @@ const randomPostList = (n) => {
       description: faker.lorem.paragraphs(),
       imageUrl: `https://picsum.photos/id/${faker.datatype.number({ max: 1000 })}/1368/400`,
       createdAt: Date.now(),
-      updateAt: Date.now(),
+      updatedAt: Date.now(),
     };
 
     postList.push(post);
