@@ -1,10 +1,9 @@
+require('dotenv').config();
 const jsonServer = require('json-server');
 const queryString = require('query-string');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults({
-  static: './public',
-});
+const middlewares = jsonServer.defaults();
 const uniqid = require('uniqid');
 const multer = require('multer');
 const fs = require('fs');
@@ -12,7 +11,7 @@ const fs = require('fs');
 // Setup upload config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const path = './public/posts';
+    const path = '/posts';
     fs.mkdirSync(path, { recursive: true });
     cb(null, path);
   },
@@ -26,11 +25,6 @@ const upload = multer({ storage });
 
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares);
-
-// Add custom routes before JSON Server router
-server.get('/echo', (req, res) => {
-  res.jsonp(req.query);
-});
 
 // To handle POST, PUT and PATCH you need to use a body-parser
 // You can use the one used by JSON Server
