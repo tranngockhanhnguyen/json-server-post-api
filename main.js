@@ -3,7 +3,9 @@ const jsonServer = require('json-server');
 const queryString = require('query-string');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json');
-const middlewares = jsonServer.defaults();
+const middlewares = jsonServer.defaults({
+  static: './public',
+});
 const uniqid = require('uniqid');
 const multer = require('multer');
 const fs = require('fs');
@@ -11,7 +13,7 @@ const fs = require('fs');
 // Setup upload config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const path = './posts';
+    const path = './public/posts';
     fs.mkdirSync(path, { recursive: true });
     cb(null, path);
   },
