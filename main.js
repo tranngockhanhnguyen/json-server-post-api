@@ -11,7 +11,7 @@ const fs = require('fs');
 // Setup upload config
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
-    const path = '/posts';
+    const path = './posts';
     fs.mkdirSync(path, { recursive: true });
     cb(null, path);
   },
