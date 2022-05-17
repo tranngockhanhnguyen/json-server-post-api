@@ -1,4 +1,4 @@
-# Posts API
+## Posts API
 
 This is just a simple RESTAPI powered by json-server.
 This project is aimed to use for testing and learning only.
@@ -41,6 +41,8 @@ Please ONLY include changes to your payload:
 }
 To remove a post
 DELETE /posts/:postId
+
+## Using
 
 Run dev:
 
