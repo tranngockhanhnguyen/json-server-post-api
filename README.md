@@ -4,7 +4,7 @@ This is just a simple RESTAPI powered by json-server.
 This project is aimed to use for testing and learning only.
 
 🎉 Post API Guide
-API_URL: https://post-api.herokuapp.com/api
+API_URL: https://post-ui.herokuapp.com/api
 Get a list of posts
 GET /posts
 Supported query params:
